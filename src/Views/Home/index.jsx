@@ -4,8 +4,8 @@ const HomeView = () => {
    return (
       <Stack>
          <Heading>Hello world!</Heading>
-         <Button>Hola</Button>
-         <Button variant='outline'>Hola</Button>
+         <Button>Hola vos</Button>
+         <Button variant='outline'>Hola vos</Button>
       </Stack>
    );
 };
