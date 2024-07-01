@@ -5,12 +5,12 @@ import Cart from "../../Components/Products/Cart";
 
 const HomeView = () => {
    return (
-      <Stack>
-         <Heading>Esto está en develop</Heading>
-         <Cart />
-         <Suspense fallback={<Spinner />}>
-            <ProductList />
-         </Suspense>
+      <Stack align='center'>
+         <Stack maxW='75rem' w='100%'>
+            <Suspense fallback={<Spinner />}>
+               <ProductList />
+            </Suspense>
+         </Stack>
       </Stack>
    );
 };

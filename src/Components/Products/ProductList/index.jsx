@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { Button, Stack, Text } from "@chakra-ui/react";
+import { Button, Stack, Text, SimpleGrid } from "@chakra-ui/react";
 import useProductStore from "../../../Stores/productStore";
 import useCartStore from "../../../Stores/cartStore";
+import ProductCard from "../Card";
 
 const ProductList = () => {
    const { products, setProducts } = useProductStore();
@@ -14,14 +15,19 @@ const ProductList = () => {
    }, [setProducts]);
 
    return (
-      <Stack>
+      <SimpleGrid columns={3} gap='1rem' paddingBlock='2rem'>
          {products.map((product) => (
-            <Stack key={product.id} direction='row' align='center'>
-               <Text>{product.title}</Text>
-               <Button onClick={() => addToCart(product)}>Add to Cart</Button>
-            </Stack>
+            <ProductCard
+               key={product.index}
+               title={product.title}
+               thumbnail={product.thumbnail}
+               price={product.price}
+               description={product.description}
+               id={product.id}
+               product={product}
+            />
          ))}
-      </Stack>
+      </SimpleGrid>
    );
 };
 
