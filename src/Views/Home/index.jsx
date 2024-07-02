@@ -1,7 +1,6 @@
-import { Stack, Heading, Spinner } from "@chakra-ui/react";
+import { Stack, Spinner } from "@chakra-ui/react";
 import { Suspense } from "react";
 import ProductList from "../../Components/Products/ProductList";
-import Cart from "../../Components/Products/Cart";
 
 const HomeView = () => {
    return (

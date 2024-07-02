@@ -6,11 +6,13 @@ import {
    Heading,
    Image,
    useToast,
+   Link,
 } from "@chakra-ui/react";
 import useCartStore from "../../../Stores/cartStore";
+import { Link as ReachLink } from "react-router-dom";
 import { IoMdArrowForward, IoMdCart } from "react-icons/io";
 
-const ProductCard = ({ thumbnail, title, price, product }) => {
+const ProductCard = ({ thumbnail, title, price, product, id }) => {
    const { addToCart } = useCartStore();
    const toast = useToast();
 
@@ -58,10 +60,9 @@ const ProductCard = ({ thumbnail, title, price, product }) => {
                   </Text>
                </Stack>
                <Stack direction='row' align='center'>
-                  {" "}
-                  <Button rightIcon={<IoMdArrowForward />} w='100%'>
-                     Ver más
-                  </Button>{" "}
+                  <Link as={ReachLink} to={`/product/${id}`} w='100%'>
+                     <Button rightIcon={<IoMdArrowForward />} w="100%">Ver más</Button>{" "}
+                  </Link>
                   <Button
                      rightIcon={<IoMdCart />}
                      variant='outline'

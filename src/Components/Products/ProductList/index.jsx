@@ -1,24 +1,20 @@
-import React, { useEffect } from "react";
-import { Button, Stack, Text, SimpleGrid } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { SimpleGrid } from "@chakra-ui/react";
 import useProductStore from "../../../Stores/productStore";
-import useCartStore from "../../../Stores/cartStore";
 import ProductCard from "../Card";
 
 const ProductList = () => {
-   const { products, setProducts } = useProductStore();
-   const { addToCart } = useCartStore();
+   const { products, fetchProducts } = useProductStore();
 
    useEffect(() => {
-      fetch("https://dummyjson.com/products")
-         .then((response) => response.json())
-         .then((data) => setProducts(data.products));
-   }, [setProducts]);
+      fetchProducts();
+   }, [fetchProducts]);
 
    return (
       <SimpleGrid columns={3} gap='1rem' paddingBlock='2rem'>
          {products.map((product) => (
             <ProductCard
-               key={product.index}
+               key={product.id}
                title={product.title}
                thumbnail={product.thumbnail}
                price={product.price}

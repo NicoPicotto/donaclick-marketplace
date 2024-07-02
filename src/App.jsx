@@ -3,6 +3,7 @@ import theme from "./theme/theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomeView from "./Views/Home";
 import Navbar from "./Components/Navbar";
+import ProductDetailView from "./Views/ProductDetail";
 
 const App = () => {
    return (
@@ -11,6 +12,7 @@ const App = () => {
             <Navbar />
             <Routes>
                <Route path='/' element={<HomeView />} />
+               <Route path='/product/:id' element={<ProductDetailView />} />
             </Routes>
             {/* <Footer /> */}
          </Router>
