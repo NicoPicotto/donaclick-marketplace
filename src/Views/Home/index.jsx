@@ -4,7 +4,7 @@ import ProductList from "../../Components/Products/ProductList";
 
 const HomeView = () => {
    return (
-      <Stack align='center'>
+      <Stack align='center' paddingInline="2rem">
          <Stack maxW='75rem' w='100%'>
             <Suspense fallback={<Spinner />}>
                <ProductList />

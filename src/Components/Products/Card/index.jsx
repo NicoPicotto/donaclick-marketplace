@@ -61,7 +61,9 @@ const ProductCard = ({ thumbnail, title, price, product, id }) => {
                </Stack>
                <Stack direction='row' align='center'>
                   <Link as={ReachLink} to={`/product/${id}`} w='100%'>
-                     <Button rightIcon={<IoMdArrowForward />} w="100%">Ver más</Button>{" "}
+                     <Button rightIcon={<IoMdArrowForward />} w='100%'>
+                        Ver más
+                     </Button>{" "}
                   </Link>
                   <Button
                      rightIcon={<IoMdCart />}

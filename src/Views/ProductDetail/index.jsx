@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { Stack, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useProductStore from "../../Stores/productStore";
@@ -31,7 +31,7 @@ const ProductDetailView = () => {
    }
 
    return (
-      <Stack align='center'>
+      <Stack align='center' p="2rem">
          <Stack maxW='75rem' w='100%'>
             <ProductDetail current={current} />
          </Stack>

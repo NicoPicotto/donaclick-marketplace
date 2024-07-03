@@ -1,17 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 
-import { Stack, Heading, Text } from "@chakra-ui/react";
+import { Stack, Grid } from "@chakra-ui/react";
+
+import DetailIzquierda from "./DetailIzquierda";
+import DetailDerecha from "./DetailDerecha";
 
 const ProductDetail = ({ current }) => {
-
    return (
       <Stack>
-         <Heading>{current.title}</Heading>
-         <Text>{current.description}</Text>
-         <Text>Category: {current.category}</Text>
-         <Text>Price: ${current.price}</Text>
-         <Text>Stock: {current.availableStock}</Text>
+         <Grid templateColumns='repeat(5, 1fr)' gap='1rem' position='relative'>
+            <DetailIzquierda current={current} />
+            <DetailDerecha current={current} />
+         </Grid>
       </Stack>
    );
 };
